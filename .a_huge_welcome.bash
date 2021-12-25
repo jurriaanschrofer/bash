@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 compliment_0="massive"
 compliment_1="huge"

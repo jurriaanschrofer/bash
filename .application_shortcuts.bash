@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 open_apps=("Sublime Text" "Notion" "Postman" "iTerm" "Sublime Merge"
            "Google Chrome" "BetterSnapTool" "Nordpass")

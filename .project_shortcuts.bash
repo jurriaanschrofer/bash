@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 eitje_root=`find ~/Documents -type d -name "eitje-api"`
 
