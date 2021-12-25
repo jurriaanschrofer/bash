@@ -39,6 +39,6 @@ else
   time_of_day="evening"
 fi
 
-echo $color_start
+echo -n $color_start
 echo -e "Good $time_of_day `whoami`, you ${!compliment} developer!"
-echo $color_end
+echo -n $color_end
