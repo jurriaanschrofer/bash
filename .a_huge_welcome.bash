@@ -1,45 +1,44 @@
-COMPLIMENT_0="massive"
-COMPLIMENT_1="huge"
-COMPLIMENT_2="mountainous"
-COMPLIMENT_3="immense"
-COMPLIMENT_4="gigantic"
-COMPLIMENT_5="enormous"
-COMPLIMENT_6="boundless"
-COMPLIMENT_7="immeasurable"
-COMPLIMENT_8="limitless"
-COMPLIMENT_9="cosmic"
-COMPLIMENT_10="monstrous"
-COMPLIMENT_11="Herculean"
-COMPLIMENT_12="hefty"
-COMPLIMENT_13="astronomical"
-COMPLIMENT_14="gargantuan"
-COMPLIMENT_15="king-sized"
-COMPLIMENT_16="mega"
-COMPLIMENT_17="giant"
-COMPLIMENT_18="tremendous"
+#!/bin/bash
 
-RANDOM_NUM=$((RANDOM % 19))
-COMPLIMENT=COMPLIMENT_$RANDOM_NUM
+compliment_0="massive"
+compliment_1="huge"
+compliment_2="mountainous"
+compliment_3="immense"
+compliment_4="gigantic"
+compliment_5="enormous"
+compliment_6="boundless"
+compliment_7="immeasurable"
+compliment_8="limitless"
+compliment_9="cosmic"
+compliment_10="monstrous"
+compliment_11="Herculean"
+compliment_12="hefty"
+compliment_13="astronomical"
+compliment_14="gargantuan"
+compliment_15="king-sized"
+compliment_16="mega"
+compliment_17="giant"
+compliment_18="tremendous"
 
-RANDOM_COL=$((RANDOM % 256))
-COLOR_START=`tput setaf $RANDOM_COL`
-COLOR_END=`tput sgr0`
+random_compliment=$((RANDOM % 19))
+compliment=compliment_$random_compliment
 
-HOUR=`date +%H`
+random_color=$((RANDOM % 256))
+color_start=`tput setaf $random_color`
+color_end=`tput sgr0`
 
-if [ $HOUR -lt 6 ]
-then
-  TIME_OF_DAY="night"
-elif [  $HOUR -lt 12 ]
-then
-  TIME_OF_DAY="morning"
-elif [  $HOUR -lt 18 ]
-then
-  TIME_OF_DAY="afternoon"
+hour=`date +%H`
+
+if [ $hour -lt 6 ]; then
+  time_of_day="night"
+elif [ $hour -lt 12 ]; then
+  time_of_day="morning"
+elif [ $hour -lt 18 ]; then
+  time_of_day="afternoon"
 else
-  TIME_OF_DAY="evening"
+  time_of_day="evening"
 fi
 
-echo $COLOR_START
-echo -e "Good $TIME_OF_DAY `whoami`, you ${!COMPLIMENT} developer!"
-echo $COLOR_END
+echo $color_start
+echo -e "Good $time_of_day `whoami`, you ${!compliment} developer!"
+echo $color_end
