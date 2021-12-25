@@ -6,4 +6,4 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Define the helpful 'shutup' command, to quickly and aggressively kill
 # servers.
-alias shutup="cat tmp/pids/server.pid | xargs -n1 -J pid kill -9 pid"
+# alias shutup="cat tmp/pids/server.pid | xargs -n1 -J pid kill -9 pid"
