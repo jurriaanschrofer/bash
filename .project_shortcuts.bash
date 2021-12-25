@@ -1,15 +1,15 @@
 #!/bin/bash
 
-root_eitje=`find ~/Documents -type d -name "eitje-api"`
+eitje_root=`find ~/Documents -type d -name "eitje-api"`
 
 function c {
-  cd $root_eitje && rails c
+  cd $eitje_root && rails c
 }
 
 function s {
-  cd $root_eitje && rails s
+  cd $eitje_root && rails s
 }
 
 function shutup { 
-  cat $root_eitje/tmp/pids/server.pid | xargs -n1 -J pid kill -9 pid
+  cat $eitje_root/tmp/pids/server.pid | xargs -n1 -J pid kill -9 pid
 }
