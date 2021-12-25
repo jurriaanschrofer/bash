@@ -30,13 +30,13 @@ function open_sesame {
 
 # applications=("Notion" "Postman" "Sublime Text Notion Postman")
 
-function close_sesame {
-  for ((i = 0; i < ${#applications[@]}; i++))
-  do
-    app="${applications[$i]}"
-    killall $app
-  done
-}
+# function close_sesame {
+#   for ((i = 0; i < ${#applications[@]}; i++))
+#   do
+#     app="${applications[$i]}"
+#     killall $app
+#   done
+# }
 
 
 ### TRY 3 TO CLOSE
