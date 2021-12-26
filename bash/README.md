@@ -1,8 +1,12 @@
+# bash
+
+
 ## setup
 
 Source all your favourite files by sourcing the .source_all.bash file in your ```.bash_profile```.
 
-## external miscellaneous
+
+## external, extra miscellaneous
 
 
 ### define 'subl'
