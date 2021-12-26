@@ -1,6 +1,35 @@
  {
-	"font_size": 18,
-	"show_full_path": true,
-	"tab_size": 2,
-	"translate_tabs_to_spaces": true
+
+  // Startup
+  "open_files_in_new_window": false,
+  "remember_full_screen": true,
+  "create_window_at_startup": false,
+
+  // Spacing
+  "tab_size": 2,
+	"translate_tabs_to_spaces": true,
+
+  // Text
+  "font_size": 14,
+  "spell_check": true,
+
+  // Display
+  "show_full_path": true,
+  "scroll_past_end": true,
+  "word_wrap": true,
+  "highlight_line": true,
+  "highlight_modified_tabs": true,
+  "bold_folder_labels": true,
+  "rulers": [
+    80
+  ],
+
+  // Auto Edits
+  "auto_close_tags": true,
+  "trim_trailing_white_space_on_save": true,
+  "ensure_newline_at_eof_on_save": true,
+
+  // Search,
+  "auto_find_in_selection": true
+
 }
