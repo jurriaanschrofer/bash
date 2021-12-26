@@ -2,12 +2,22 @@
 
 eitje_root=`find ~/Documents -type d -name "eitje-api"`
 
-function c {
+function run_c {
   cd $eitje_root && rails c
 }
 
-function s {
+function run_s {
   cd $eitje_root && rails s
+}
+
+function open_st {
+  /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $eitje_root
+}
+
+function eitje {
+  open_st
+  run_c
+  run_s
 }
 
 function shutup { 

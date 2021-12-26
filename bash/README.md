@@ -10,9 +10,15 @@ Source all your favourite files by sourcing the .source_all_custom_scripts.bash 
 
 
 ### define 'subl'
-Define the 'subl' command, by adding the sublime text binary path to PATH:
+Define the 'subl' command, by adding the binary path to PATH:
 ```bash
 echo 'export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"' >> ~/.bash_profile
+```
+
+### define 'smerge'
+Define the 'smerge' command, by adding the binary path to PATH
+```bash
+echo 'export PATH="/Applications/Sublime Merge.app/Contents/SharedSupport/bin:$PATH"' >> ~/.bash_profile
 ```
 
 ### git completion
