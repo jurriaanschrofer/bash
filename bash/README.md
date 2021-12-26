@@ -3,7 +3,7 @@
 
 ## setup
 
-Source all your favourite files by sourcing the .source_all.bash file in your ```.bash_profile```.
+Source all your favourite files by sourcing the .source_all_custom_scripts.bash file in your ```.bash_profile```.
 
 
 ## external, extra miscellaneous
