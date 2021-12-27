@@ -10,6 +10,10 @@ function run_s {
   cd $eitje_root && rails s
 }
 
+function run_g {
+  cd $eitje_root && guard
+}
+
 function open_st {
   /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $eitje_root
 }
