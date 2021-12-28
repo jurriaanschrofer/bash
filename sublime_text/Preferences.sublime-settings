@@ -26,7 +26,13 @@
   "trim_trailing_white_space_on_save": true,
   "ensure_newline_at_eof_on_save": true,
 
-  // Search,
-  "auto_find_in_selection": true
+  // Search
+  "auto_find_in_selection": true,
 
+  // Exclude bulky files from search
+  "folder_exclude_patterns":
+    [
+      "node_modules",
+      "dist"
+    ]
 }
