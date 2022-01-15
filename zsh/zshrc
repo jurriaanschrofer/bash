@@ -1,0 +1,198 @@
+###########################################################################################
+# Installation notes
+###########################################################################################
+
+# Before below config may take effect, first install oh-my-zsh: the configuration framework
+# for zsh. Installation instruction at: https://github.com/ohmyzsh/ohmyzsh/
+#
+# Table of contents:
+#   1. Paths and sourcing
+#   2. Configuring zsh
+#   3. Configuring o-my-zsh
+#   4. Aliases & functions
+#   5. General CLI configuration
+
+###########################################################################################
+# 1. Paths and sourcing
+###########################################################################################
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Adds an awesome welcome message to your shell.
+source ~/code/coding_config/zsh/source_all_scripts.zsh
+
+# Adds git completion, zsh wrapper for the bash binary. Does not work?
+fpath=(~/code/coding_config/zsh $fpath)
+
+# Add 'subl' command
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
+# Add 'smerge' command
+export PATH="/Applications/Sublime Merge.app/Contents/SharedSupport/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+
+
+###########################################################################################
+# 2. Configuring zsh
+###########################################################################################
+
+# If a command is issued that can't be executed as a normal command, and the command is the name of a directory, perform the cd command to that directory.
+setopt AUTO_CD
+
+
+###########################################################################################
+# 3. Configuring o-my-zsh
+###########################################################################################
+
+# Set theme. See all available themes at https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git                        # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+  zsh-autosuggestions        # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+  dirhistory                 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory
+  web-search                 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
+  # jsontools                  # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='subl' # !!! Change back to 'vim', if this would break due to remotely unavailable 'subl'
+else
+  export EDITOR='subl'
+fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+
+###########################################################################################
+# 4. Aliases & functions
+###########################################################################################
+
+eitje_backend_root='/Users/jur/code/eitje-api'
+eitje_frontend_root='/Users/jur/code/eitje_web'
+code_root='/Users/jur/code'
+
+function code {
+  cd $code_root
+}
+
+function api {
+  cd $eitje_backend_root
+}
+
+function web {
+  cd $eitje_frontend_root
+}
+
+function run_c {
+  api && rails c
+}
+
+function run_s {
+  api && rails s
+}
+
+function run_g {
+  api && guard
+}
+
+function run_y {
+  web && yarn start
+}
+
+function shutup {
+  cat $eitje_backend_root/tmp/pids/server.pid | xargs -n1 -J pid kill -9 pid
+}
+
+
+
+###########################################################################################
+# 5. General CLI configuration
+###########################################################################################
+
+# Disable the last login message on shell startup. Remove file to enable once again.
+DISPLAY_LAST_LOGIN_ON_SHELL_STARTUP=false
+if [[ -a ~/.hushlogin || $DISPLAY_LAST_LOGIN_ON_SHELL_STARTUP = true ]];
+then
+else
+  touch ~/.hushlogin
+fi
