@@ -1,4 +1,10 @@
- {
+// Browse and add dictionaries at:
+//    https://github.com/titoBouzout/Dictionaries
+// To add a dictionary follow the instructions at:
+//    https://forum.sublimetext.com/t/solved-spell-check-for-other-language-possible/39538/4
+//    https://stackoverflow.com/questions/18350790/sublime-text-3-and-2-newly-installed-dictionaries-do-not-work
+
+{
 
   // Startup
   "open_files_in_new_window": false,
@@ -7,16 +13,16 @@
 
   // Spacing
   "tab_size": 2,
-	"translate_tabs_to_spaces": true,
+  "translate_tabs_to_spaces": true,
 
   // Text
-  "font_size": 14,
+  "font_size": 17,
   "spell_check": true,
 
   // Display
   "show_full_path": true,
   "scroll_past_end": true,
-  "word_wrap": true,
+  // "word_wrap": true,
   "highlight_line": true,
   "highlight_modified_tabs": true,
   "bold_folder_labels": true,
@@ -34,5 +40,16 @@
     [
       "node_modules",
       "dist"
-    ]
+  ],
+  "ignored_packages":
+  [
+    "Vintage",
+  ],
+  "added_words":
+  [
+    "dropdown",
+    "behaviour",
+    "urls",
+  ],
+
 }
