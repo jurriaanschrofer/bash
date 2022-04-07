@@ -1,7 +1,10 @@
 #!/usr/bin/env zsh
 
 clang_new () {
-  subl $1.c
+  file=$1.c
+  touch $file
+  printf "#include <stdio.h>\n\nint main() { \n  \n}\n">> $file
+  subl $file
 }
 
 clang_run () {
